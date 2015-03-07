@@ -59,3 +59,7 @@ docs/_build
 # prod
 /gunicorn_config.py
 /gunicorn.pid
+
+# node
+/node_modules
+/*/node_modules

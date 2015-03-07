@@ -1,0 +1,40 @@
+/**
+ * =============================================================================
+ * Form
+ * =============================================================================
+ */
+
+.Form {
+
+    &-legend {
+        display:block; width:100%;
+        font-size:2.5em; font-weight:700;
+        border-bottom:4px solid $color-alpha;
+        color:$color-alpha;
+
+        &:before {
+            content:'\003e';
+        }
+    }
+
+    &-item {
+        margin-bottom:1em;
+    }
+
+    &-label {
+        margin-bottom:0.2em;
+        font-size:1.4em;
+        color:$color-alpha;
+    }
+
+    &-requiredFlag {
+        font-weight:700;
+        color:$color-gamma;
+    }
+
+    &-fieldDesc {
+        margin-bottom:0.7em;
+        font-size:0.9em; font-style:italic;
+        color:$color-beta;
+    }
+}

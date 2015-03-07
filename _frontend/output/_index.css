@@ -1,0 +1,276 @@
+@charset "UTF-8";
+/* Deep purple :P; */
+/* Gray */
+/* Pink */
+/**
+ * Global styling reset, use with and after Normalize and with caution!
+ * Goes best with screen display.
+ */
+/**
+ * Reset styling for all elements.
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+button, textarea, select,
+article, aside, figure, footer, header, main,
+hgroup, menu, nav, section, menu,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/**
+ * Differentiate styling for input elements.
+ *
+ * We won’t reset any border for input elements since default styling is very
+ * sensitive to OS-specific settings.
+ *
+ * Be sure to change it for your project-specific styles!
+ */
+input {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Reset leading for `html`.
+ */
+html {
+  line-height: 1;
+}
+
+/**
+ * Remove styling for lists.
+ */
+ol, ul, li {
+  list-style: none;
+}
+
+/**
+ * =============================================================================
+ * Globals
+ * =============================================================================
+ */
+html {
+  line-height: 1.5;
+}
+
+html, select, button,
+input, textarea {
+  font-size: 100%;
+  font-family: Lato, sans-serif;
+  color: #333;
+}
+
+abbr[title] {
+  border-bottom: 0;
+}
+
+/**
+ * =============================================================================
+ * Form
+ * =============================================================================
+ */
+.Form-legend {
+  display: block;
+  width: 100%;
+  font-size: 2.5em;
+  font-weight: 700;
+  border-bottom: 4px solid #352134;
+  color: #352134;
+}
+.Form-legend:before {
+  content: '\003e';
+}
+.Form-item {
+  margin-bottom: 1em;
+}
+.Form-label {
+  margin-bottom: 0.2em;
+  font-size: 1.4em;
+  color: #352134;
+}
+.Form-requiredFlag {
+  font-weight: 700;
+  color: #f16c5b;
+}
+.Form-fieldDesc {
+  margin-bottom: 0.7em;
+  font-size: 0.9em;
+  font-style: italic;
+  color: #9b9b9b;
+}
+
+/**
+ * =============================================================================
+ * Field
+ * =============================================================================
+ */
+/**
+ * Text
+ * -----------------------------------------------------------------------------
+ */
+.Field--text {
+  padding: 0.8em;
+  font-size: 1.1em;
+  border: 1px solid #352134;
+  background: #fff;
+  box-shadow: 0;
+  outline: 0;
+  transition: box-shadow 0.07s ease-in-out;
+  display: block;
+  width: 100%;
+}
+.Field--text:focus {
+  box-shadow: 0 0 0 3px rgba(53, 33, 52, 0.15);
+}
+
+/**
+ * Checkbox/radio
+ * -----------------------------------------------------------------------------
+ */
+.Form-label--asField {
+  font-size: 1em;
+  margin-bottom: 0;
+}
+.Form-label--asField .Field {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+.Form-label--asField .Field:checked + .Form-labelCaption {
+  color: #fff;
+  background: #352134;
+}
+.Form-label--asField .Form-labelCaption {
+  padding: 0.8em;
+  font-size: 1.1em;
+  border: 1px solid #352134;
+  background: #fff;
+  text-align: center;
+  transition: background 0.07s ease-in-out;
+}
+
+/**
+ * Select
+ * -----------------------------------------------------------------------------
+ */
+.Field--select {
+  padding: 0.8em;
+  font-size: 1.1em;
+  border: 1px solid #352134;
+  background: #fff;
+  box-shadow: 0;
+  outline: 0;
+  transition: box-shadow 0.07s ease-in-out;
+  display: block;
+  width: 100%;
+  border-radius: 0;
+  text-align: center;
+  -webkit-appearance: none;
+}
+.Field--select:focus {
+  box-shadow: 0 0 0 3px rgba(53, 33, 52, 0.15);
+}
+
+.Select {
+  display: block;
+  position: relative;
+}
+.Select:after {
+  font-size: 1.1em;
+  content: '';
+  position: absolute;
+  right: 0.8em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/**
+ * Vanity field
+ * -----------------------------------------------------------------------------
+ */
+.VanityField {
+  position: relative;
+}
+.VanityField:before, .VanityField:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  text-align: center;
+  pointer-events: none;
+}
+.VanityField:before {
+  content: '';
+  background: #352134;
+}
+.VanityField:after {
+  top: 50%;
+  color: #fff;
+  transform: translateY(-50%);
+}
+.VanityField .Field {
+  padding-left: calc(50px + 0.8em);
+}
+.VanityField--twitter:after {
+  content: '@';
+}
+
+/**
+ * =============================================================================
+ * Field collection
+ * =============================================================================
+ */
+.FieldCollection {
+  overflow: hidden;
+  margin-top: -0.4em;
+  margin-bottom: -0.4em;
+}
+.FieldCollection-item {
+  float: left;
+  width: 50%;
+  padding: 0.4em 0.7em;
+}
+.FieldCollection-item:nth-child(2n+1) {
+  padding-left: 0;
+}
+.FieldCollection-item:nth-child(2n+2) {
+  padding-right: 0;
+}
+.FieldCollection .Form-label,
+.FieldCollection .Form-labelCaption {
+  display: block;
+}
+
+/**
+ * =============================================================================
+ * Form actions
+ * =============================================================================
+ */
+.Form-action {
+  box-shadow: 0;
+  outline: 0;
+  transition: box-shadow 0.07s ease-in-out;
+  width: 100%;
+  padding: 0.25em;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #fff;
+  background: #352134;
+}
+.Form-action:focus {
+  box-shadow: 0 0 0 0.09em rgba(53, 33, 52, 0.15);
+}
+.Form-action:hover {
+  box-shadow: 0 0 0 0.09em rgba(53, 33, 52, 0.15);
+}

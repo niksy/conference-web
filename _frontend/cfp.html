@@ -1,0 +1,103 @@
+<!doctype html>
+<!--[if lt IE 9]>     <html class="no-js lte-ie8"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>CFP</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin,latin-ext" />
+    <link rel="stylesheet" href="output/index.css" />
+</head>
+<body>
+
+    <form action="" class="Form">
+        <fieldset class="Form-fieldset">
+            <legend class="Form-legend">Talk</legend>
+
+            <div class="Form-item">
+                <label class="Form-label" for="">Title <abbr class="Form-requiredFlag" title="Required field">*</abbr></label>
+                <p class="Form-fieldDesc">
+                    The title of your talk. Please keep it short and catchy.
+                </p>
+                <div class="Form-field">
+                    <input type="text" class="Field Field--text" />
+                </div>
+            </div>
+
+            <div class="Form-item">
+                <label class="Form-label" for="">Language <abbr class="Form-requiredFlag" title="Required field">*</abbr></label>
+                <p class="Form-fieldDesc">
+                    Select preferred language. Keep in mind that talks in English will be given priority.
+                </p>
+                <ul class="FieldCollection">
+                    <li class="FieldCollection-item">
+                        <label for="test1" class="Form-label Form-label--asField">
+                            <input id="test1" type="radio" name="test" value="0" class="Field Field--radio" />
+                            <span class="Form-labelCaption">English</span>
+                        </label>
+                    </li>
+                    <li class="FieldCollection-item">
+                        <label for="test2" class="Form-label Form-label--asField">
+                            <input id="test2" type="radio" name="test" value="1" class="Field Field--radio" />
+                            <span class="Form-labelCaption">Croatian</span>
+                        </label>
+                    </li>
+                    <li class="FieldCollection-item">
+                        <label for="test3" class="Form-label Form-label--asField">
+                            <input id="test3" type="radio" name="test" value="3" class="Field Field--radio" />
+                            <span class="Form-labelCaption">Croatian</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="Form-item">
+                <label class="Form-label" for="">About you <abbr class="Form-requiredFlag" title="Required field">*</abbr></label>
+                <p class="Form-fieldDesc">
+                    Describe yourself in 140 characters or less.
+                </p>
+                <div class="Form-field">
+                    <textarea class="Field Field--text" rows="5"></textarea>
+                </div>
+            </div>
+
+            <div class="Form-item">
+                <label class="Form-label" for="">T-shirt size <abbr class="Form-requiredFlag" title="Required field">*</abbr></label>
+                <p class="Form-fieldDesc">
+                    Speakers will receive a fancy speaker WebCamp t-shirt.
+                </p>
+                <div class="Form-field">
+                    <span class="Select">
+                        <select class="Field Field--select">
+                            <option value="1">S</option>
+                            <option value="1">M</option>
+                            <option value="1">L</option>
+                            <option value="1">XL</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+
+            <div class="Form-item">
+                <label class="Form-label" for="">Twitter <abbr class="Form-requiredFlag" title="Required field">*</abbr></label>
+                <p class="Form-fieldDesc">
+                    Your Twitter handle, if you have one. Enter only your handle, without the @.
+                </p>
+                <div class="Form-field">
+                    <div class="VanityField VanityField--twitter">
+                        <input type="text" class="Field Field--text" />
+                    </div>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <div class="Form-actions">
+            <button type="submit" class="Form-action Form-action--submit">Submit</button>
+        </div>
+
+    </form>
+
+</body>
+</html>
