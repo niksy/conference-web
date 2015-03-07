@@ -1,9 +1,17 @@
 /**
  * =============================================================================
- * Colors
+ * Layout
  * =============================================================================
  */
 
-$color-alpha: #352134; /* Deep purple :P; */
-$color-beta: #9b9b9b; /* Gray */
-$color-gamma: #f16c5b; /* Pink */
+.Wrapper {
+    margin:0 auto;
+
+    &--wide {
+        max-width:1180px;
+    }
+
+    &--narrow {
+        max-width:780px;
+    }
+}

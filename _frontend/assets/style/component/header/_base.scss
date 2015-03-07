@@ -1,0 +1,29 @@
+/**
+ * =============================================================================
+ * Header
+ * =============================================================================
+ */
+
+.Header {
+    padding-bottom:100px;
+    color:#fff;
+    background:url(/static/images/header_image.jpg);
+    background-size:cover;
+    background-position:50% 50%;
+
+    &-logo {
+        width:130px; height:130px;
+
+        @media screen and (min-width:$bp-beta) {
+            width:160px; height:160px;
+        }
+
+        @media screen and (min-width:$bp-gamma) {
+            width:180px; height:180px;
+        }
+    }
+
+    @media screen and (min-width:$bp-alpha) {
+        padding-bottom:150px;
+    }
+}

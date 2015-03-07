@@ -9,35 +9,23 @@ $field-base-dimensions: (
     font-size: 1.1em
 );
 
-@mixin form-element-effect ($size: 3px, $activate-on-hover: false) {
-    $box-shadow: 0 0 0 $size rgba($color-alpha, 0.15);
-    box-shadow:0;
-    outline:0;
-    transition:box-shadow 0.07s ease-in-out;
-
-    &:focus {
-        box-shadow:$box-shadow;
-    }
-
-    @if $activate-on-hover {
-        &:hover {
-            box-shadow:$box-shadow;
-        }
-    }
-}
-
 @mixin field-base {
     padding:map-get($field-base-dimensions, spacing);
     font-size:map-get($field-base-dimensions, font-size);
     border:1px solid $color-alpha;
     background:#fff;
+    transition:border-color 0.07s ease-in-out;
+
+    &:focus {
+        border-color:$color-gamma;
+    }
 }
 
 @mixin field-base-text {
     @include field-base;
-    @include form-element-effect;
     display:block;
     width:100%;
+    outline:0;
 }
 
 /**

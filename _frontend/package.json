@@ -12,6 +12,8 @@
     "grunt-contrib-cssmin": "^0.12.2",
     "grunt-contrib-sass": "^0.9.2",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-grunticon": "^2.1.5",
+    "grunt-svgmin": "^2.0.1",
     "load-grunt-tasks": "^3.1.0"
   }
 }

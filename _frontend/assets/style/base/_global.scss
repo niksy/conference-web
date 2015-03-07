@@ -17,3 +17,24 @@ input, textarea {
 abbr[title] {
     border-bottom:0;
 }
+
+body {
+
+    @media screen and (min-width:$bp-alpha) {
+        border:10px solid #fff;
+    }
+
+    @media screen and (min-width:$bp-beta) {
+        border-width:20px;
+    }
+}
+
+a {
+    display:inline-block;
+    color:$color-gamma;
+    text-decoration:none;
+
+    &:hover {
+        text-decoration:underline;
+    }
+}

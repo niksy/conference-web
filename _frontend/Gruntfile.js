@@ -36,11 +36,17 @@ module.exports = function ( grunt ) {
         watch: {
             sass: {
                 files: ['assets/style/**/*.scss'],
-                tasks: ['sass']
+                tasks: ['sass'],
+                options: {
+                    spawn: false
+                }
             },
             cssmin: {
                 files: ['output/_index.css'],
-                tasks: ['cssmin']
+                tasks: ['cssmin'],
+                options: {
+                    spawn: false
+                }
             }
         },
 
