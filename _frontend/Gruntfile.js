@@ -9,10 +9,13 @@ module.exports = function ( grunt ) {
                 options: {
                     sourcemap: 'none',
                     style: 'expanded',
-                    precision: 5
+                    precision: 5,
+                    loadPath: [
+                        'node_modules/bourbon/app/assets/stylesheets'
+                    ]
                 },
                 files: {
-                    'output/_index.css': 'assets/style/index.scss'
+                    'static/stylesheets/site.css': 'static/stylesheets/source/index.scss'
                 }
             }
         },
@@ -24,26 +27,58 @@ module.exports = function ( grunt ) {
                     restructuring: false
                 },
                 files: {
-                    'output/index.css': [
+                    'static/stylesheets/site.css': [
                         'node_modules/normalize.css/normalize.css',
                         'node_modules/rationalize.css/dist/rationalize.css',
-                        'output/_index.css'
+                        'static/stylesheets/site.css'
                     ]
                 }
             }
         },
 
-        watch: {
-            sass: {
-                files: ['assets/style/**/*.scss'],
-                tasks: ['sass'],
+        postcss: {
+            dist: {
                 options: {
-                    spawn: false
-                }
-            },
-            cssmin: {
-                files: ['output/_index.css'],
-                tasks: ['cssmin'],
+                    map: false,
+                    processors: [
+                        require('autoprefixer-core')({ browsers: ['last 2 version'] }).postcss,
+                        require('pixrem')(),
+                        require('postcss-assets')(),
+                    ]
+                },
+                src: 'static/stylesheets/site.css',
+                dest: 'static/stylesheets/site.css'
+            }
+        },
+
+        ttf2woff: {
+            dist: {
+                src: ['static/fonts/*.ttf'],
+                dest: 'static/fonts/'
+            }
+        },
+
+        imagemin: {
+            main: {
+                options: {
+                    svgoPlugins: [
+                        {removeTitle: true},
+                        {removeDesc: true}
+                    ]
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'static/images/',
+                    src: ['**/*.{png,jpg,gif,svg}'],
+                    dest: 'static/images/'
+                }]
+            }
+        },
+
+        watch: {
+            css: {
+                files: ['static/stylesheets/source/**/*.scss'],
+                tasks: ['css'],
                 options: {
                     spawn: false
                 }
@@ -63,7 +98,7 @@ module.exports = function ( grunt ) {
                 options: {
                     logConcurrentOutput: true
                 },
-                tasks: ['watch:sass', 'watch:cssmin', 'connect:dev:keepalive']
+                tasks: ['watch:css', 'connect:dev:keepalive']
             }
         }
 
@@ -71,7 +106,9 @@ module.exports = function ( grunt ) {
 
     require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask('default', ['sass','cssmin']);
+    grunt.registerTask('default', ['imagemin','css']);
+    grunt.registerTask('css', ['sass','cssmin','postcss']);
+    grunt.registerTask('font', ['ttf2woff']);
     grunt.registerTask('dev', ['default','concurrent']);
 
 };
