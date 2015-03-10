@@ -15,7 +15,7 @@
         color:$color-alpha;
 
         &:before {
-            content:'\003e';
+            content:'\003e\0020';
         }
 
         @media screen and (min-width:$bp-beta) {
@@ -32,6 +32,7 @@
     }
 
     &-label {
+        display:inline-block;
         margin-bottom:0.2em;
         font-size:1.4em;
         color:$color-alpha;
@@ -42,9 +43,13 @@
         color:$color-gamma;
     }
 
+    &-fieldDesc,
+    &-shortDesc {
+        font-size:80%; font-style:italic;
+    }
+
     &-fieldDesc {
         margin-bottom:0.7em;
-        font-size:0.9em; font-style:italic;
         color:$color-beta;
     }
 

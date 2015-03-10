@@ -14,7 +14,8 @@ $field-base-dimensions: (
     font-size:map-get($field-base-dimensions, font-size);
     border:1px solid $color-alpha;
     background:#fff;
-    transition:border-color 0.07s ease-in-out;
+    transition:all 0.07s ease-in-out;
+    transition-property:border-color, background, color;
 
     &:focus {
         border-color:$color-gamma;
@@ -67,12 +68,17 @@ $field-base-dimensions: (
             color:#fff;
             background:$color-alpha;
         }
+
+        &:hover + .Form-labelCaption,
+        &:focus + .Form-labelCaption {
+            border-color:$color-gamma;
+        }
     }
 
     .Form-labelCaption {
         @include field-base;
+        display:block;
         text-align:center;
-        transition:background 0.07s ease-in-out;
     }
 }
 
@@ -85,6 +91,7 @@ $field-base-dimensions: (
 
     &--select {
         @include field-base-text;
+        line-height:normal;
         text-align:center;
         -webkit-appearance:none;
     }
@@ -112,13 +119,14 @@ $field-base-dimensions: (
 
     &:before,
     &:after {
-        position:absolute; left:1px; top:1px; bottom:1px;
+        position:absolute; left:0; top:0; bottom:0;
         width:50px;
         pointer-events:none;
     }
 
     &:before {
         content:'';
+        left:1px; top:1px; bottom:1px;
         background:$color-alpha;
     }
 
