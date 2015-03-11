@@ -8,7 +8,7 @@
     display:inline-block;
     vertical-align:top;
     background-repeat:no-repeat;
-    background-size:cover;
+    background-size:contain;
     text-indent:-9999px; overflow:hidden;
 }
 
@@ -22,4 +22,12 @@
 
 @mixin Icon--social__Icon--github__white {
     background-image:inline('/static/images/svg/github-white.svg');
+}
+
+@mixin Icon--social__Icon--googlePlus__white {
+    background-image:inline('/static/images/svg/google-plus-white.svg');
+}
+
+@mixin Icon--social__Icon--linkedin__white {
+    background-image:inline('/static/images/svg/linkedin-white.svg');
 }

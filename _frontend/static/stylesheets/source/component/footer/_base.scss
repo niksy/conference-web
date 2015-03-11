@@ -22,15 +22,20 @@
  */
 
 .QuickSocial {
-    text-align: center;
+    text-align:center;
+    font-size:0;
 
     > li {
         display:inline-block;
+        padding:0 0.5rem;
+
+        @media screen and (max-width:370px - 1) {
+            width:percentage(1/3);
+        }
     }
 
     a {
         display:inline-block;
-        margin:0 0.5em;
 
         &:hover {
 
@@ -46,6 +51,14 @@
 
                 &--github {
                     @include Icon--social__Icon--github__white;
+                }
+
+                &--googlePlus {
+                    @include Icon--social__Icon--googlePlus__white;
+                }
+
+                &--linkedin {
+                    @include Icon--social__Icon--linkedin__white;
                 }
             }
         }
