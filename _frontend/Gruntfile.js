@@ -64,14 +64,16 @@ module.exports = function ( grunt ) {
                     svgoPlugins: [
                         {removeTitle: true},
                         {removeDesc: true},
-                        {convertPathData: false},
-                        {mergePaths: false},
+                        {removeUselessStrokeAndFill: false},
+                        {removeViewBox: false},
                     ]
                 },
                 files: [{
                     expand: true,
                     cwd: 'static/images/',
-                    src: ['**/*.{png,jpg,gif,svg}'],
+                    src: [
+                        '**/*.{png,jpg,gif,svg}'
+                    ],
                     dest: 'static/images/'
                 }]
             }
