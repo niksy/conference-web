@@ -45,22 +45,22 @@
             &:before,
             &:after {
                 content:'';
-                position:absolute; top:-25px;
+                position:absolute; top:-30px;
                 background-size:cover;
             }
 
             &:before {
                 right:100%;
-                width:149px; height:105px;
-                margin-right:-45px;
-                background-image:inline('/static/images/icons/pixels-left.png');
+                width:155px; height:110px;
+                margin-right:-43px;
+                background-image:inline('/static/images/icons/pixels-left.svg');
             }
 
             &:after {
                 left:100%;
-                width:135px; height:105px;
-                margin-left:-31px;
-                background-image:inline('/static/images/icons/pixels-right.png');
+                width:141px; height:110px;
+                margin-left:-33px;
+                background-image:inline('/static/images/icons/pixels-right.svg');
             }
         }
     }

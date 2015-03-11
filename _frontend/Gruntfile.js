@@ -63,7 +63,9 @@ module.exports = function ( grunt ) {
                 options: {
                     svgoPlugins: [
                         {removeTitle: true},
-                        {removeDesc: true}
+                        {removeDesc: true},
+                        {convertPathData: false},
+                        {mergePaths: false},
                     ]
                 },
                 files: [{
