@@ -102,6 +102,24 @@
         text-align:center;
     }
 
+    .Togglable {
+
+        &-caption {
+
+            @media screen and (max-width:$bp-beta - 1) {
+                padding:0.4em;
+            }
+        }
+
+        .Icon--checkmark {
+            width:30px; height:25px;
+
+            @media screen and (min-width:$bp-beta) {
+                width:40px; height:30px;
+            }
+        }
+    }
+
     @media screen and (min-width:$bp-beta) {
         position:relative;
         padding-right:100px;
